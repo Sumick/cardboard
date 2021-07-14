@@ -13,6 +13,12 @@
       "content": "Wow, I didn't know that this app is so useful!",
       "createdAt": "2021-07-10T13:57:41.073Z",
       "boardId": 1
-    }
+    },
+    { "id": 4, "content": "", "createdAt": "", "boardId": 1 },
+    { "id": 5, "content": "", "createdAt": "", "boardId": 1 },
+    { "id": 6, "content": "", "createdAt": "", "boardId": 1 },
+    { "id": 7, "content": "", "createdAt": "", "boardId": 1 },
+    { "id": 8, "content": "", "createdAt": "", "boardId": 1 },
+    { "id": 9, "content": "", "createdAt": "", "boardId": 1 }
   ]
 }

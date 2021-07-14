@@ -1,22 +1,15 @@
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">Cardboard</h3>
-
-  <p align="center">
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-  </p>
+    <img src="https://images.prismic.io/nerdbord/4603d4f2-4525-46dc-9fd6-c975661838bb_Wellcard+logo.png?auto=compress,format" alt="Logo" width="360" height="80">
 </p>
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
+
   <summary>Table of Contents</summary>
+  
+  
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
@@ -31,88 +24,109 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+      <li>
+          <a href="#architecture">Architecture</a>
+        </li>
   </ol>
 </details>
 
 <!-- ABOUT THE PROJECT -->
 
-## About The Project
+## About
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<p id="about-the-project">Cardboard is a single page application (SPA) for managing private notes.</p>
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
-
-Here's why:
-
-- Your time should be focused on creating something amazing. A project that solves a problem and helps others
-- You shouldn't be doing the same tasks over and over like creating a README from scratch
-- You should element DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
-
-### Built With
+### Technologies used
 
 - [Typescript](https://www.typescriptlang.org/)
 - [Create React App](https://create-react-app.dev/)
 - [Styled components](https://styled-components.com/)
+- [JSON server](https://github.com/typicode/json-server)
 - [react-testing-library](https://testing-library.com/docs/react-testing-library/intro/)
 
 <!-- GETTING STARTED -->
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Great to see you here!
+
+Below you will find instruction how to setup project locally on your machine.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+1. Ensure that you have Node.js installed on you machine.
 
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
+- [What is Node.js and how to install it?](https://nodejs.org/en/)
+- [How can I check if I have Node.js installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm#checking-your-version-of-npm-and-nodejs)
+
+2. Ensure that you have Yarn installed on you machine.
+
+- [What is Yarn and how to install it?](https://yarnpkg.com/getting-started/install)
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Install required project dependencies by typing below command.
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   yarn install
    ```
-3. Install NPM packages
+2. Start back-end service by typing:
    ```sh
-   npm install
+   yarn server
    ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
+3. Start front-end development by typing:
+   ```sh
+   yarn start
    ```
+
+**_all commands must be typed in terminal in project root directory_**
 
 <!-- USAGE EXAMPLES -->
 
-## Usage
+## Architecture
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+For architecture flow chart [see here](https://whimsical.com/cardboard-Nt4fR5WBe2xUPSkf1ayHEG).
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+#### **Directory structure**
+
+```
+├── src
+│   ├── api
+│   │   ├── client.ts // axios client setuo
+│   │   └── requests.ts // http requests configured
+│   ├── components // UI layer
+│   │   ├── Board
+│   │   │   ├── Board.container.tsx // Container component for keeping business logic inside
+│   │   │   ├── Board.tsx // Dumb, presentational component
+│   │   │   └── __tests__ // Board integration and unit tests (always try to keep close to implementation)
+│   │   └── Icons
+│   ├── data // Domain separated data layer
+│   │   ├── card
+│   │   │   ├── api.ts // Card CRUD requests
+│   │   │   ├── dto.ts // Data transfer object defined
+│   │   │   ├── factory.ts // Factory for generating models, useful in tests
+│   │   │   └── types.ts // Types for
+│   │   └── index.ts
+│   ├── hooks // handy, and reusable UI hooks
+│   │   ├── useInput.ts
+│   │   └── useOutsideClick.ts
+│   ├── theme // global styles and tokens
+│   │   ├── colors.ts
+│   │   ├── globalStyles.ts
+│   │   ├── spacings.ts
+│   │   └── tokens.ts
+│   └── utils // handy functions for solving repeatable problems
+│       └── generators.ts
+
+```
 
 <!-- LICENSE -->
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+All rights to this project belongs to [Nerdbord](https://nerdbord.io). This project is for educational purposes only.
 
 <!-- CONTACT -->
 
 ## Contact
 
-Jakub Wasowski - [@your_twitter](https://twitter.com/your_username) - jakub@nerdbord.io
+Jakub Wasowski, [E-mail](jakub@nerdbord.io) | [Github](https://twitter.com/your_username) | [LinkedIn](https://twitter.com/your_username)
