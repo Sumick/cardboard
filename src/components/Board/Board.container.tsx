@@ -13,8 +13,15 @@ const BoardContainer = () => {
 
   useEffect(() => {
     const fetchCards = async () => {
-      const cards = await findCardsByBoardId(MY_BOARD_ID)
-      setCards(cards)
+      try {
+        const cards = await findCardsByBoardId(MY_BOARD_ID)
+        setCards(cards)
+      } catch (error) {
+        console.warn(
+          'Ensure your server is running. For more details check our readme.'
+        )
+        setCards([])
+      }
     }
     fetchCards()
   }, [])
@@ -27,7 +34,6 @@ const BoardContainer = () => {
           id={cardProps.id}
           content={cardProps.content}
           createdAt={cardProps.createdAt}
-          onSaveContent={() => {}}
         />
       ))}
     </Board>

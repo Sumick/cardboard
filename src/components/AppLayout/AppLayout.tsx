@@ -1,11 +1,7 @@
-import styled from 'styled-components'
 import { PropsWithChildren } from 'react'
 
-export const AppLayout = (props: PropsWithChildren<{}>) => (
-  <Layout>{props.children}</Layout>
-)
+import styles from './AppLayout.module.css'
 
-const Layout = styled.div`
-  max-width: 1216px;
-  margin: 0 auto;
-`
+export const AppLayout = (props: PropsWithChildren<{}>) => (
+  <div className={styles.layout}>{props.children}</div>
+)

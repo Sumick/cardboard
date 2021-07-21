@@ -1,11 +1,8 @@
-import styled from 'styled-components'
-
 import { CardEditModel } from '../../../data/card'
 
-import { FontSize } from '../../../theme/tokens'
-import { Colors } from '../../../theme/colors'
-
 import { useInput } from '../../../hooks/useInput'
+
+import styles from './CardContentForm.module.css'
 
 interface CardContentFormValues extends CardEditModel {}
 
@@ -23,8 +20,9 @@ export const CardContentForm = (props: CardContentFormProps) => {
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <ContentTextArea
+    <form className={styles.form} onSubmit={handleSubmit}>
+      <textarea
+        className={styles.textarea}
         id={'card-content-textarea'}
         name="content"
         autoFocus
@@ -32,22 +30,6 @@ export const CardContentForm = (props: CardContentFormProps) => {
         onBlur={handleSubmit}
         onChange={handleChange}
       />
-    </Form>
+    </form>
   )
 }
-
-const ContentTextArea = styled.textarea`
-  font-size: ${FontSize.S16};
-  line-height: 25px;
-  width: 100%;
-  background: transparent;
-  color: ${Colors.wtf};
-  border: none;
-  outline: transparent;
-  resize: none;
-  min-height: 120px;
-`
-
-const Form = styled.form`
-  height: 100%;
-`

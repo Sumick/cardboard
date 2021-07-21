@@ -111,7 +111,7 @@ For architecture flow chart [see here](https://whimsical.com/cardboard-Nt4fR5WBe
 │   │   └── useOutsideClick.ts
 │   ├── theme // global styles and tokens
 │   │   ├── colors.ts
-│   │   ├── globalStyles.ts
+│   │   ├── global.css
 │   │   ├── spacings.ts
 │   │   └── tokens.ts
 │   └── utils // handy functions for solving repeatable problems

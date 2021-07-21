@@ -1,0 +1,12 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr 292px;
+  padding: 56px 0 64px 0;
+}
+
+.description {
+  line-height: var(--line-height-17);
+  text-align: right;
+  color: var(--color-purple);
+  font-size: var(--font-size-14);
+}
