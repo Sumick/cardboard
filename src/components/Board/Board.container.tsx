@@ -3,8 +3,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { Board } from './Board'
 import { Card } from '../Card/Card'
 
-import { CardEntity } from '../../data/card'
-import { findCards } from '../../data/card/api'
+import { CardEntity, findCards } from '../../data/card'
 
 const BoardContainer = () => {
   const [cards, setCards] = useState<CardEntity[]>([])
@@ -15,7 +14,7 @@ const BoardContainer = () => {
       setCards(cards)
     } catch (error) {
       console.warn(
-        'Ensure your server is running. For more details check our readme.'
+        'Ensure your server is running. For more details, check our readme.'
       )
       setCards([])
     }
