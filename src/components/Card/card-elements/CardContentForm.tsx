@@ -1,10 +1,10 @@
-import { CardEditModel } from '../../../data/card'
+import { CardEditEntity } from '../../../data/card'
 
 import { useInput } from '../../../hooks/useInput'
 
 import styles from './CardContentForm.module.css'
 
-interface CardContentFormValues extends CardEditModel {}
+interface CardContentFormValues extends CardEditEntity {}
 
 interface CardContentFormProps {
   initialValues: CardContentFormValues
@@ -23,8 +23,6 @@ export const CardContentForm = (props: CardContentFormProps) => {
     <form className={styles.form} onSubmit={handleSubmit}>
       <textarea
         className={styles.textarea}
-        id={'card-content-textarea'}
-        name="content"
         autoFocus
         value={value}
         onBlur={handleSubmit}

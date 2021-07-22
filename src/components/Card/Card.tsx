@@ -2,12 +2,12 @@ import { useRef, useState } from 'react'
 
 import { CardContentForm } from './card-elements/CardContentForm'
 
-import { CardModel } from '../../data/card'
+import { CardEntity } from '../../data/card'
 import { useOutsideClick } from '../../hooks/useOutsideClick'
 
 import styles from './Card.module.css'
 
-interface CardProps extends CardModel {}
+interface CardProps extends CardEntity {}
 
 export const Card = (props: CardProps) => {
   const ref = useRef(null)

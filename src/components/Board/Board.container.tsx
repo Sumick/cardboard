@@ -3,13 +3,13 @@ import { useEffect, useState } from 'react'
 import { Board } from './Board'
 import { Card } from '../Card/Card'
 
-import { CardModel } from '../../data/card'
+import { CardEntity } from '../../data/card'
 import { findCardsByBoardId } from '../../data/card/api'
 
 const MY_BOARD_ID = 1
 
 const BoardContainer = () => {
-  const [cards, setCards] = useState<CardModel[]>([])
+  const [cards, setCards] = useState<CardEntity[]>([])
 
   useEffect(() => {
     const fetchCards = async () => {

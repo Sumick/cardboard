@@ -1,9 +1,9 @@
-export interface CardModel {
+export interface CardEntity {
   id: number
   content: string
   createdAt: string
 }
 
-export interface CardCreateModel extends Omit<CardModel, 'id'> {}
+export interface CardCreateEntity extends Omit<CardEntity, 'id'> {}
 
-export interface CardEditModel extends CardModel {}
+export interface CardEditEntity extends CardEntity {}
