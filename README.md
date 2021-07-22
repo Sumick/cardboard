@@ -40,7 +40,7 @@
 
 - [Typescript](https://www.typescriptlang.org/)
 - [Create React App](https://create-react-app.dev/)
-- [Styled components](https://styled-components.com/)
+- [CSS Modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet)
 - [JSON server](https://github.com/typicode/json-server)
 - [react-testing-library](https://testing-library.com/docs/react-testing-library/intro/)
 
@@ -91,7 +91,7 @@ For architecture flow chart [see here](https://whimsical.com/cardboard-Nt4fR5WBe
 ```
 ├── src
 │   ├── api
-│   │   ├── client.ts // axios client setuo
+│   │   ├── client.ts // axios client setup
 │   │   └── requests.ts // http requests configured
 │   ├── components // UI layer
 │   │   ├── Board
@@ -101,19 +101,16 @@ For architecture flow chart [see here](https://whimsical.com/cardboard-Nt4fR5WBe
 │   │   └── Icons
 │   ├── data // Domain separated data layer
 │   │   ├── card
-│   │   │   ├── api.ts // Card CRUD requests
-│   │   │   ├── dto.ts // Data transfer object defined
+│   │   │   ├── api.ts // Card API requests
+│   │   │   ├── dto.ts // Data transfer object (this is how data comes from backend)
 │   │   │   ├── factory.ts // Factory for generating models, useful in tests
-│   │   │   └── types.ts // Types for
+│   │   │   └── types.ts // Domain types used across front-end app
 │   │   └── index.ts
 │   ├── hooks // handy, and reusable UI hooks
 │   │   ├── useInput.ts
 │   │   └── useOutsideClick.ts
 │   ├── theme // global styles and tokens
-│   │   ├── colors.ts
 │   │   ├── global.css
-│   │   ├── spacings.ts
-│   │   └── tokens.ts
 │   └── utils // handy functions for solving repeatable problems
 │       └── generators.ts
 
@@ -129,4 +126,4 @@ All rights to this project belongs to [Nerdbord](https://nerdbord.io). This proj
 
 ## Contact
 
-Jakub Wasowski, [E-mail](jakub@nerdbord.io) | [Github](https://twitter.com/your_username) | [LinkedIn](https://twitter.com/your_username)
+Nerdbord, [E-mail](jakub@nerdbord.io) | [Github](https://github.com/nerdbord) | [LinkedIn](https://www.linkedin.com/company/79632271)

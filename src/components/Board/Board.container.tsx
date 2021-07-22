@@ -4,9 +4,7 @@ import { Board } from './Board'
 import { Card } from '../Card/Card'
 
 import { CardEntity } from '../../data/card'
-import { findCardsByBoardId } from '../../data/card/api'
-
-const MY_BOARD_ID = 1
+import { findCards } from '../../data/card/api'
 
 const BoardContainer = () => {
   const [cards, setCards] = useState<CardEntity[]>([])
@@ -14,7 +12,7 @@ const BoardContainer = () => {
   useEffect(() => {
     const fetchCards = async () => {
       try {
-        const cards = await findCardsByBoardId(MY_BOARD_ID)
+        const cards = await findCards()
         setCards(cards)
       } catch (error) {
         console.warn(

@@ -4,12 +4,12 @@ import { render, waitFor, screen } from '@testing-library/react'
 
 import Board from '../../Board.container'
 
-import { findCardsByBoardId } from '../../../../data/card/api'
+import { findCards } from '../../../../data/card/api'
 import { createManyCards } from '../../../../data/card/factory'
 
 jest.mock('../../../../data/card/api')
 
-const mockedGetCardsRequest = findCardsByBoardId as unknown as jest.Mock
+const mockedGetCardsRequest = findCards as unknown as jest.Mock
 
 describe('Board integration tests', () => {
   it('should display 4 fetched cards on board correctly', async () => {
