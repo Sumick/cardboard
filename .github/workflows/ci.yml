@@ -7,12 +7,12 @@ on:
     branches: [main]
 
 jobs:
-  app-testing:
+  app-functional-testing:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
 
     steps:
       - name: Checkout repository
@@ -33,13 +33,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run the tests
+      - name: Jest tests (unit, integration)
         run: npm run test
 
-      - name: Build
-        run: npm run build
-
-      - name: Functional testing (cypress)
+      - name: Cypress testing (functional)
         uses: cypress-io/github-action@v2
         with:
+          build: npm run build
           start: npm start
