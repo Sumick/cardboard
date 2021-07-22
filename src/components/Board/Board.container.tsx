@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 import { Board } from './Board'
 import { Card } from '../Card/Card'
@@ -9,20 +9,21 @@ import { findCards } from '../../data/card/api'
 const BoardContainer = () => {
   const [cards, setCards] = useState<CardEntity[]>([])
 
-  useEffect(() => {
-    const fetchCards = async () => {
-      try {
-        const cards = await findCards()
-        setCards(cards)
-      } catch (error) {
-        console.warn(
-          'Ensure your server is running. For more details check our readme.'
-        )
-        setCards([])
-      }
+  const fetchCards = useCallback(async () => {
+    try {
+      const cards = await findCards()
+      setCards(cards)
+    } catch (error) {
+      console.warn(
+        'Ensure your server is running. For more details check our readme.'
+      )
+      setCards([])
     }
-    fetchCards()
   }, [])
+
+  useEffect(() => {
+    fetchCards()
+  }, [fetchCards])
 
   return (
     <Board>

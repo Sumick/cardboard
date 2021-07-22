@@ -26,13 +26,13 @@ export const post = async <Payload, ResponseData>(
   }
 }
 
-export const path = async <Payload, ResponseData>(
+export const put = async <Payload, ResponseData>(
   url: string,
   body: Payload,
   config?: AxiosRequestConfig
 ): Promise<ResponseData> => {
   try {
-    const { data } = await apiClient.patch<ResponseData>(url, body, config)
+    const { data } = await apiClient.put<ResponseData>(url, body, config)
     return data
   } catch (err) {
     throw Error(err.message)
