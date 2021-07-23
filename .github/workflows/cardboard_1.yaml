@@ -21,3 +21,4 @@ jobs:
           spec: cypress/tests/cardboard_adding_editing_cards.spec.js
           install: false
           build: npm run build
+          start: npm start

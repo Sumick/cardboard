@@ -21,3 +21,4 @@ jobs:
           spec: cypress/tests/cardboard_app.spec.js
           install: false
           build: npm run build
+          start: npm start
