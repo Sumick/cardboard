@@ -18,7 +18,7 @@ jobs:
       - name: e2e run
         uses: cypress-io/github-action@v2
         with:
-          spec: cypress/tests/cardboard_app.spec.js
+          spec: cypress/integration/cardboard_app.spec.js
           install: false
           build: npm run build
           start: npm start
