@@ -7,37 +7,12 @@ on:
     branches: [main]
 
 jobs:
-  app-functional-testing:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x]
-
+  functional-testing:
+    runs-on: ubuntu-20.04
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            **/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Jest tests (unit, integration)
-        run: npm run test
-
-      - name: Cypress testing (functional)
+      - name: e2e run
         uses: cypress-io/github-action@v2
         with:
-          build: npm run build
-          start: npm start
+          test: npm run test
