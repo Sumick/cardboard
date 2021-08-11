@@ -13,9 +13,7 @@ const BoardContainer = () => {
       const cards = await findCards()
       setCards(cards)
     } catch (error) {
-      console.warn(
-        'Ensure your server is running. For more details, check our readme.'
-      )
+      alert('Ensure server is running. For more details, check project readme.')
       setCards([])
     }
   }, [])

@@ -28,7 +28,7 @@ export const Card = (props: CardProps) => {
   }
 
   return (
-    <div className={styles.card}>
+    <div data-cy={`card-${props.id}`} className={styles.card}>
       <p className={styles.date}>{props?.createdAt || 'Date'}</p>
       {!isEditing ? (
         <p onClick={handleSetEditingOn}>

@@ -4,7 +4,7 @@ import { render, waitFor, screen } from '@testing-library/react'
 
 import Board from '../../Board.container'
 
-import { findCards } from '../../../../data/card/api'
+import { findCards } from '../../../../data/card'
 import { createManyCards } from '../../../../data/card/factory'
 
 jest.mock('../../../../data/card/api')
