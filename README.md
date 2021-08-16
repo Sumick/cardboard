@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-    <img src="https://images.prismic.io/nerdbord/4603d4f2-4525-46dc-9fd6-c975661838bb_Wellcard+logo.png?auto=compress,format" alt="Logo" width="360" height="80">
+    <img src="https://images.prismic.io/nerdbord/0cc16003-70ab-4018-adde-ad44b9e5deee_Cardboard_logo.png?auto=compress,format" alt="Logo" width="360" height="80">
 </p>
 
 <!-- TABLE OF CONTENTS -->
