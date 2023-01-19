@@ -32,7 +32,7 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## About
+## About (update)
 
 <p id="about-the-project">Cardboard is a single page application (SPA) for managing private notes.</p>
 
