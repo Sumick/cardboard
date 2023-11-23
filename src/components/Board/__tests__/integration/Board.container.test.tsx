@@ -33,12 +33,40 @@ describe('BoardContainer integration tests', () => {
     // Simulate click on <CardAddNew />
     await waitFor(() => {
       fireEvent.click(screen.getByRole('button', { name: 'Add new card' }))
-
       // Assertions
       // Check if a new card is displayed
       expect(screen.getByText('Click to start noting')).toBeInTheDocument() // Adjust based on how a new card is displayed
     })
 
     expect(createCardSpy).toHaveBeenCalledTimes(1)
+  })
+
+  it('deletes a card with empty content on Backspace press', async () => {
+    // Mock findCards and deleteCard
+    vi.spyOn(dataModule, 'findCards').mockResolvedValue([
+      { id: 1, content: '', createdAt: new Date().toISOString() },
+    ])
+    const deleteCardSpy = vi
+      .spyOn(dataModule.CardModel.prototype, 'create')
+      .mockResolvedValue()
+
+    // Render the BoardContainer
+    render(<BoardContainer />)
+
+    await waitFor(() => {
+      // Simulate Backspace press on the textarea with empty content
+      const card = screen.getByText('Click to start noting')
+
+      fireEvent.click(card)
+
+      const textarea = screen.getByPlaceholderText(
+        'Start typing or press Backspace to delete this card'
+      )
+      fireEvent.keyDown(textarea, { key: 'Backspace' })
+
+      // Assertions
+      expect(deleteCardSpy).toHaveBeenCalledWith(1)
+      expect(screen.queryByTestId(`card-${1}`)).not.toBeInTheDocument()
+    })
   })
 })

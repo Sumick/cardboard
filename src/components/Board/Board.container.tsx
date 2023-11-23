@@ -13,7 +13,7 @@ const BoardContainer = () => {
     const fetchCards = async () => {
       try {
         const cards = await findCards()
-
+        console.log('cards', cards)
         const mappedCards = cards.map((card) => new CardModel(card))
         setCards(mappedCards)
       } catch (error) {

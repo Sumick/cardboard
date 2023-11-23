@@ -12,5 +12,8 @@ export const server = setupServer(
   }),
   http.post('http://localhost:4100/cards', () => {
     return HttpResponse.json({})
+  }),
+  http.delete('http://localhost:4100/cards/:id', () => {
+    return HttpResponse.json({})
   })
 )
