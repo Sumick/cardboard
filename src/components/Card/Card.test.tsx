@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from 'vitest'
 import { Card } from './Card'
 import { createCard } from '../../data/card/factory'
 
-describe('Card', () => {
+describe('Card component unit tests', () => {
   const cardMock = createCard({
     content: 'Test content',
   })
